@@ -1,0 +1,30 @@
+<div class="row">
+  {% for konto in konta_promowane %}
+
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header">Konto nr {{loop.index}}</div>
+      <div class="card-body">
+        <h5 class="card-title">{{konto["nazwa"]}}</h5>
+
+        <ul class="list-group list-group-flush">
+          {% for li in konto["informacjeOProdukcie"] %}
+          <li class="list-group-item">{{li}}</li>
+          {% endfor %}
+        </ul>
+        <br />
+        <a href="{{konto['linkAfilacyjny']}}" class="btn btn-success"
+          >Strona banku</a
+        >
+        <a
+          href="{{url_for('opis_produktu', nazwa_konta=konto['nazwa'])}}"
+          class="btn btn-primary"
+          >Szczegóły promocji</a
+        >
+      </div>
+
+      <div class="card-footer text-body-secondary">2 days ago</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
