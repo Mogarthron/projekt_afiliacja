@@ -19,8 +19,11 @@
   <body>
     <div class="container">{% include "navbar.html" %}</div>
     <br />
-    <div class="container">{% include "polecane_produkty.html" %}</div>
+    <div class="container mb-3">{% include "polecane_produkty.html" %}</div>
     <br />
+    {#
+    <div class="container">{% include "polecane_kredyty.html" %}</div>
+    <br />#}
     <div class="container">
       <div class="grid gap-0 row-gap-3">{% block content %} {% endblock %}</div>
     </div>
